@@ -1,0 +1,24 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 12px;
+    background-color: #e0e3da;
+    perspective: 800px;
+}
+
+.device {
+    width: 400px;
+    height: 600px;
+    background: #566270;
+    transform-origin: center center;
+    transform: rotateY(30deg);
+}

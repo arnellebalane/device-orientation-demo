@@ -1,0 +1,12 @@
+{
+  "name": "device-orientation-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Arnelle Balane <arnellebalane@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "morgan": "^1.8.2"
+  }
+}
