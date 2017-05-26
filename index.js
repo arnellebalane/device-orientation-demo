@@ -26,7 +26,11 @@ const port = process.env.PORT || 3000;
 server.listen(port, () => console.log(`Running at port ${port}`));
 
 const io = socketio(server);
-io.on('connection', (socket) => {
-    socket.emit('greeting', 'welcome');
-    socket.on('greeting', (data) => console.log(data));
+let primarySocket = null;
+
+io.of('/').on('connection', (socket) => primarySocket = socket);
+io.of('/controller').on('connection', (socket) => {
+    socket.on('deviceorientation', (e) => {
+        primarySocket.emit('deviceorientation', e);
+    });
 });

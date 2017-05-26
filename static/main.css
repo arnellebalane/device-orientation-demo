@@ -20,5 +20,6 @@ body {
     height: 600px;
     background: #566270;
     transform-origin: center center;
-    transform: rotateY(30deg);
+    will-change: transform;
+    transform: rotateX(90deg);
 }

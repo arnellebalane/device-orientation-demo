@@ -1,4 +1,13 @@
 const socket = io('/');
+socket.on('deviceorientation', handleOrientation);
 
-socket.on('greeting', (data) => console.log(data));
-socket.emit('greeting', 'hello server');
+const element = document.querySelector('.device');
+const offsets = { beta: 90 };
+
+function handleOrientation({ alpha, beta, gamma }) {
+    const transforms = [
+        `rotateX(${-beta + offsets.beta}deg)`,
+        `rotateY(${gamma}deg)`
+    ];
+    element.style.transform = transforms.join(' ');
+}
